@@ -1,4 +1,4 @@
-# FairMetrics - PRIVATE
+# FairMetrics
 This repository is the official implementation of the paper **"Rethinking Fairness Metrics for Multi-Class and Multi-Group Assessment: Not Everything is Binary."**
 
 **Authors:**
