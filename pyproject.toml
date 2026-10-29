@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FairMetrics"
+version = "0.1.0"
+description = "Fairness assessment metrics for binary, multi-class and multi-group settings. Official implementation of the paper 'Rethinking Fairness Metrics for Multi-Class and Multi-Group Assessment: Not Everything is Binary'."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+experiments = [
+    "pandas>=2.0",
+    "scikit-learn>=1.4",
+    "imbalanced-learn>=0.12",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["fairmetrics*", "fairmetrics_experiments*"]
