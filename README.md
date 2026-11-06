@@ -1,5 +1,13 @@
 # FairMetrics
+
+[![PyPI](https://img.shields.io/pypi/v/FairMetrics)](https://pypi.org/project/FairMetrics/)
+[![Python](https://img.shields.io/pypi/pyversions/FairMetrics)](https://pypi.org/project/FairMetrics/)
+[![License: MIT](https://img.shields.io/github/license/FRACTALS-Research-Group/FairMetrics)](LICENSE.txt)
+[![Paper](https://img.shields.io/badge/arXiv-2611.03257-b31b1b.svg)](https://doi.org/10.48550/arXiv.2611.03257)
+
 This repository is the official implementation of the paper **"Rethinking Fairness Metrics for Multi-Class and Multi-Group Assessment: Not Everything is Binary."**
+
+📄 Paper: https://doi.org/10.48550/arXiv.2611.03257
 
 **Authors:**
 - **Matteo Grazioso**¹*† ([matteo.grazioso@unive.it](mailto:matteo.grazioso@unive.it))
@@ -25,11 +33,18 @@ fairmetrics/
 ├── independence.py
 ├── separation.py
 ├── sufficiency.py
-└── accuracy.py
+├── accuracy.py
+└── data/
+    ├── adult/my_adult.csv
+    └── student_success/student_success.csv
 
 fairmetrics_experiments/
 ├── __init__.py
 ├── binarization.py
+├── compat.py
+├── data.py
+├── fairness_tests.py
+├── hpo.py
 └── run_hpo.py
 
 scripts/
@@ -44,15 +59,31 @@ The split is organized around:
 
 ## Installation
 
+Install the latest release from PyPI:
+
 ```bash
-pip install -e .
+pip install FairMetrics
 ```
 
 Optional experiment dependencies:
 
 ```bash
-pip install -e '.[experiments]'
+pip install "FairMetrics[experiments]"
 ```
+
+The Adult and Student Success datasets are bundled with the package and loaded via `fairmetrics.load_adult()` and `fairmetrics.load_students_success()`.
+
+Development install from source:
+
+```bash
+git clone https://github.com/FRACTALS-Research-Group/FairMetrics.git
+cd FairMetrics
+pip install -e '.[dev,experiments]'
+```
+
+## Citation
+
+If you use this code, please cite the paper: https://doi.org/10.48550/arXiv.2611.03257
 
 ## Modes used in paper runs
 
