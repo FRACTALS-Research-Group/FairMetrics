@@ -78,8 +78,7 @@ def load_students_success():
             Target labels mapped to integers.
     """
     csv_path = _resolve_local_csv(
-        '../datasets/student_success/student_success.csv',
-        'datasets/student_success/student_success.csv',
+        'fairmetrics/data/student_success/student_success.csv'
     )
     if csv_path is not None:
         df = pd.read_csv(csv_path, sep=';')
@@ -91,8 +90,8 @@ def load_students_success():
             df = pd.concat([ds.data.features, ds.data.targets], axis=1)
         except Exception as exc:
             raise FileNotFoundError(
-                "Student dataset not found. Put the CSV in ../datasets/student_success/student_success.csv "
-                "or `pip install ucimlrepo` for the UCI fallback."
+                "Student dataset not found in the package data. "
+                "Install `ucimlrepo` (pip install ucimlrepo) to use the UCI fallback."
             ) from exc
 
     target_map = {'Dropout': 0, 'Enrolled': 1, 'Graduate': 2}
@@ -120,7 +119,7 @@ def load_adult():
         - y: pd.Series
             Target labels mapped to integers.
     """
-    csv_path = _resolve_local_csv('../datasets/adult/my_adult.csv', 'datasets/adult/my_adult.csv')
+    csv_path = _resolve_local_csv('fairmetrics/data/adult/my_adult.csv')
     if csv_path is not None:
         features = [
             'Age', 'Workclass', 'fnlwgt', 'Education', 'Education-Num',

@@ -35,5 +35,4 @@ __all__ = [
     "find_distribution",
     "load_adult",
     "load_students_success",
-    "hyperparams_tuning",
 ]

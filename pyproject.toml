@@ -10,6 +10,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "torch>=2.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
 ]
 
 [project.optional-dependencies]
@@ -24,3 +26,6 @@ dev = [
 
 [tool.setuptools.packages.find]
 include = ["fairmetrics*", "fairmetrics_experiments*"]
+
+[tool.setuptools.package-data]
+fairmetrics = ["data/**/*.csv"]

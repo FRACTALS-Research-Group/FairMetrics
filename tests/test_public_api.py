@@ -18,7 +18,8 @@ MODULES = [
 CORE_SYMBOLS = [
     "demographic_parity",
     "equal_opportunity",
-    "multiclass_equal_opportunity",
+    "equal_opportunity",
+    "diagonal_equality",
     "binary_predictive_parity",
     "multiclass_predictive_parity",
     "equal_accuracy",
